@@ -13,4 +13,6 @@ Settings:
 <img width="211" alt="Screenshot 2022-11-07 at 4 21 50 pm" src="https://user-images.githubusercontent.com/73977370/200232839-fea81a56-4560-4e91-9c2c-d5d46144b2b0.png">
 <br/>
 
-Please note: Due to copyright I cannot publish the audio file used. As such if you copy this project you must include your own sound file and update the "Timer View" swift file with the correct file name. 
+<h3>Additional Notes</h3>
+- Due to copyright I cannot publish the audio file used. As such if you copy this project you must include your own sound file and update the "Timer View" swift file with the correct file name. 
+- MenuBarExtra requires MacOS Ventura to work correctly - unfortunately this project will not work on earlier versions. 
