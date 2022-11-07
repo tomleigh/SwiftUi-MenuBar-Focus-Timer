@@ -14,5 +14,5 @@ Settings:
 <br/>
 
 <h3>Additional Notes</h3>
-- Due to copyright I cannot publish the audio file used. As such if you copy this project you must include your own sound file and update the "Timer View" swift file with the correct file name. 
-- MenuBarExtra requires MacOS Ventura to work correctly - unfortunately this project will not work on earlier versions. 
+<li> Due to copyright I cannot publish the audio file used. As such if you copy this project you must include your own sound file and update the "Timer View" swift file with the correct file name. </li>
+<li> MenuBarExtra <strong>requires MacOS Ventura</strong> to work correctly - unfortunately this project will not work on earlier versions.  </li>
