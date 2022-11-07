@@ -8,6 +8,7 @@
 import SwiftUI
 import AVKit
 
+/// The main timer view for the menu bar window
 struct TimerView: View {
     @Binding var settingsOpen: Bool
     @Binding var audioPlayer: AVAudioPlayer!
@@ -28,6 +29,7 @@ struct TimerView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            // Displays the timer in HH:MM:SS format
             HStack(spacing: 0) {
                 StopwatchUnitView(timeUnit: hours)
                 Text(":")
@@ -42,9 +44,10 @@ struct TimerView: View {
 
             
             HStack {
+                // Pause / Play button
                 Button(action: {
                     // Pause or Resume timer
-                    if isRunning{
+                    if isRunning {
                         timer?.invalidate()
                         self.audioPlayer.pause()
                     } else {
@@ -52,6 +55,7 @@ struct TimerView: View {
                             progressTime += 1
                         })
                         if(!isMuted) {
+                            // Only play sound when resuming if not muted
                             audioPlayer.play()
                         }
                     }
@@ -70,6 +74,7 @@ struct TimerView: View {
                     }
                 })
                 
+                // Restart timer button
                 Button(action: {
                     timer?.invalidate()
                     progressTime = 0
@@ -83,7 +88,7 @@ struct TimerView: View {
                 })
                 
 
-                
+                // Mute / Unmute audio
                 Button(action: {
                     if(isMuted && isRunning) {
                         audioPlayer.play()
@@ -103,6 +108,7 @@ struct TimerView: View {
         }
         .padding(.vertical, 5)
         
+        // AVAudioPlayer must be initialised - but only on the first view of the window
         .onAppear {
             if(!soundInitialised) {
                 let sound = Bundle.main.path(forResource: "rain-sound", ofType: "mp3")
@@ -115,7 +121,8 @@ struct TimerView: View {
     }
 }
 
-
+/// Utility function to display each unit (hours/minutes/seconds) as two digits
+/// Source: https://medium.com/geekculture/build-a-stopwatch-in-just-3-steps-using-swiftui-778c327d214b
 struct StopwatchUnitView: View {
     var timeUnit: Int
 
@@ -140,6 +147,7 @@ struct StopwatchUnitView: View {
     }
 }
 
+/// Utility function to get the character at a given index
 extension String {
     func substring(index: Int) -> String {
         let arrayString = Array(self)
