@@ -8,7 +8,7 @@
 import SwiftUI
 import AVKit
 
-
+/// The core window in the menu bar
 struct MainView: View {
     @State private var settingsOpen: Bool  = false
     @State var audioPlayer: AVAudioPlayer!
@@ -20,15 +20,12 @@ struct MainView: View {
     @AppStorage("soundscape") var soundscape : String = "Rain"
     @State var soundInitialised : Bool = false
     
-    
-    //@AppStorage("username") var username: String = "Anonymous"
-
-    
     // Increase progressTime each second
     @State private var timer: Timer?
     
     var body: some View {
         VStack (spacing: 0) {
+            /// TitleBar is persistent across the TimerView and SettingsView
             TitleBar(settingsOpen: $settingsOpen)
                 .padding(.top, 5)
                 .transaction { transaction in
@@ -54,6 +51,7 @@ struct MainView: View {
         .background(setThemeColor())
     }
     
+    /// Used to change the colour theme of the menu panel (background colour)
     func setThemeColor() -> Color {
         switch (colourTheme) {
         case "Blue": return .blue
@@ -70,6 +68,7 @@ struct MainView: View {
     }
 }
 
+/// A set of transitions between windows. Used to scale and fade between settings and timer views.
 extension AnyTransition {
     static var moveAndFadeLeft: AnyTransition {
         .asymmetric(

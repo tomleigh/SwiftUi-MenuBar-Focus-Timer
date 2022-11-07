@@ -8,6 +8,7 @@
 import SwiftUI
 import AVKit
 
+/// View of the settings window that appears when the Cog icon is pressed
 struct SettingsView: View {
     @Binding var settingsOpen: Bool
     @Binding var audioPlayer: AVAudioPlayer!
@@ -19,6 +20,7 @@ struct SettingsView: View {
         VStack (alignment: .leading, spacing: 5) {
             Divider()
             Text("Volume")
+            // Set the sound volume
             Slider(
                 value: $volume,
                 in: 0.1...1.0,
@@ -27,9 +29,10 @@ struct SettingsView: View {
                 }
             )
             Divider()
+            
             /*
              /// Possible future update with different soundscapes
-             /// Note: will need to edit sound on the AVPlayer
+             /// Note: will need to edit the sound on the AVPlayer in TimerView .onAppear
              
             Picker(selection: $soundscape, label: Text("Sound:")) {
                 Text("Rain").tag("Rain")
@@ -42,6 +45,8 @@ struct SettingsView: View {
             
             Divider()
             */
+            
+            // Change the menu colour theme
             Picker(selection: $colourTheme, label: Text("Theme:")) {
                 Text("Default").tag("Default")
                 Text("Blue").tag("Blue")
@@ -53,6 +58,8 @@ struct SettingsView: View {
             }.pickerStyle(RadioGroupPickerStyle())
             
             Divider()
+            
+            // quit the application
             Button(action: {
                 NSApplication.shared.terminate(nil)
             }, label: {
