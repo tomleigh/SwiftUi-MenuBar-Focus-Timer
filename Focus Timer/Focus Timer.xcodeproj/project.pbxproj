@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E2168D4F28F8C14100F9CD44 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2168D4E28F8C14100F9CD44 /* TitleBar.swift */; };
 		E21EA78828F7A91100445778 /* Focus_TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EA78728F7A91100445778 /* Focus_TimerApp.swift */; };
-		E21EA78A28F7A91100445778 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EA78928F7A91100445778 /* ContentView.swift */; };
 		E21EA78C28F7A91300445778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21EA78B28F7A91300445778 /* Assets.xcassets */; };
 		E21EA78F28F7A91300445778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21EA78E28F7A91300445778 /* Preview Assets.xcassets */; };
 		E21EA79128F7A91300445778 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EA79028F7A91300445778 /* Persistence.swift */; };
@@ -24,7 +23,6 @@
 		E2168D4E28F8C14100F9CD44 /* TitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBar.swift; sourceTree = "<group>"; };
 		E21EA78428F7A91100445778 /* Focus Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focus Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21EA78728F7A91100445778 /* Focus_TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focus_TimerApp.swift; sourceTree = "<group>"; };
-		E21EA78928F7A91100445778 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E21EA78B28F7A91300445778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E21EA78E28F7A91300445778 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E21EA79028F7A91300445778 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				E2168D4E28F8C14100F9CD44 /* TitleBar.swift */,
 				E21EA79D28F7A9B700445778 /* TimerView.swift */,
 				E21EA79F28F7AA0600445778 /* SettingsView.swift */,
-				E21EA78928F7A91100445778 /* ContentView.swift */,
 				E21EA78B28F7A91300445778 /* Assets.xcassets */,
 				E21EA79028F7A91300445778 /* Persistence.swift */,
 				E21EA79528F7A91300445778 /* Focus_Timer.entitlements */,
@@ -166,7 +163,6 @@
 				E21EA79E28F7A9B700445778 /* TimerView.swift in Sources */,
 				E21EA79428F7A91300445778 /* Focus_Timer.xcdatamodeld in Sources */,
 				E21EA79128F7A91300445778 /* Persistence.swift in Sources */,
-				E21EA78A28F7A91100445778 /* ContentView.swift in Sources */,
 				E21EA79C28F7A99400445778 /* MainView.swift in Sources */,
 				E21EA78828F7A91100445778 /* Focus_TimerApp.swift in Sources */,
 			);
