@@ -1,6 +1,6 @@
 # SwiftUi-MenuBar-Focus-Timer
 
-<H2> MenuBarExtra Focus Timer with white-noise soundscape </H2> 
+<H2> Focus Timer with white-noise soundscape </H2> 
 This menu app includes a simple stop-watch timer with background rain.
 
 <br/>
@@ -14,5 +14,4 @@ Settings:
 <br/>
 
 <h3>Additional Notes</h3>
-<li> Due to copyright I cannot publish the audio file used. As such if you copy this project you must include your own sound file and update the "Timer View" swift file with the correct file name. </li>
 <li> MenuBarExtra <strong>requires MacOS Ventura</strong> to work correctly - unfortunately this project will not work on earlier versions.  </li>
