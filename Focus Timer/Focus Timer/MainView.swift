@@ -34,15 +34,13 @@ struct MainView: View {
             
             if(settingsOpen) {
                 SettingsView(settingsOpen: $settingsOpen, audioPlayer: $audioPlayer, volume: $volume, colourTheme: $colourTheme, soundscape: $soundscape)
-                    .transition(.ScaleFade)
+                    .transition(.moveAndFadeLeft)
                     .frame(width: 150)
-                    .animation(.default.speed(0.5), value: settingsOpen)
                 
             } else {
                 TimerView(settingsOpen: $settingsOpen, audioPlayer: $audioPlayer,volume: $volume, progressTime: $progressTime, isRunning: $isRunning, isMuted: $isMuted, soundInitialised: $soundInitialised, timer: $timer)
-                    .transition(.ScaleFade)
+                    .transition(.moveAndFadeRight)
                     .frame(width: 150)
-                    .animation(.default.speed(0.5), value: settingsOpen)
                 
             }
         }

@@ -16,7 +16,6 @@
 		E21EA79C28F7A99400445778 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EA79B28F7A99400445778 /* MainView.swift */; };
 		E21EA79E28F7A9B700445778 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EA79D28F7A9B700445778 /* TimerView.swift */; };
 		E21EA7A028F7AA0600445778 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EA79F28F7AA0600445778 /* SettingsView.swift */; };
-		E21EA7A228F7B6C600445778 /* rain-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E21EA7A128F7B6C600445778 /* rain-sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		E21EA79B28F7A99400445778 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E21EA79D28F7A9B700445778 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		E21EA79F28F7AA0600445778 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		E21EA7A128F7B6C600445778 /* rain-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "rain-sound.mp3"; path = "../../../../Downloads/rain-sound.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				E21EA78728F7A91100445778 /* Focus_TimerApp.swift */,
-				E21EA7A128F7B6C600445778 /* rain-sound.mp3 */,
 				E21EA79B28F7A99400445778 /* MainView.swift */,
 				E2168D4E28F8C14100F9CD44 /* TitleBar.swift */,
 				E21EA79D28F7A9B700445778 /* TimerView.swift */,
@@ -146,7 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E21EA78F28F7A91300445778 /* Preview Assets.xcassets in Resources */,
-				E21EA7A228F7B6C600445778 /* rain-sound.mp3 in Resources */,
 				E21EA78C28F7A91300445778 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

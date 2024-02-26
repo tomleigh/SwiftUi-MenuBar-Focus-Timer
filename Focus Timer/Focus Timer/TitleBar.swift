@@ -24,7 +24,9 @@ struct TitleBar: View {
                     }
                 }
                 else {
-                    settingsOpen.toggle()
+                    withAnimation {
+                        settingsOpen.toggle()
+                    }
                 }
             }) {
                 Label("Toggle", systemImage: settingsOpen ? "chevron.backward.circle.fill" : "gearshape.fill")

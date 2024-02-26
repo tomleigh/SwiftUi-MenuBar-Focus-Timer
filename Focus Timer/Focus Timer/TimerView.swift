@@ -111,8 +111,10 @@ struct TimerView: View {
         // AVAudioPlayer must be initialised - but only on the first view of the window
         .onAppear {
             if(!soundInitialised) {
-                let sound = Bundle.main.path(forResource: "rain-sound", ofType: "mp3")
-                audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                let sound = NSDataAsset(name: "RainSound")?.data
+                audioPlayer = try! AVAudioPlayer(data: sound!)
+                //let sound = Bundle.main.path(forResource: "rain-sound", ofType: "mp3")
+                //audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
                 audioPlayer.numberOfLoops = -1
                 audioPlayer.setVolume((Float)(volume), fadeDuration: 0)
                 soundInitialised = true
