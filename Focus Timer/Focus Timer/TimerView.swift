@@ -19,14 +19,16 @@ struct TimerView: View {
     @Binding var soundInitialised: Bool
     
     @Binding var timer: Timer?
-    
+
     // Computed properties to get the progressTime in hh:mm:ss format
     var hours: Int { progressTime / 3600 }
     var minutes: Int { (progressTime % 3600) / 60 }
     var seconds: Int { progressTime % 60 }
-    
 
-    
+    @State private var clockVisible = false
+    @State private var dividerVisible = false
+    @State private var controlsVisible = false
+
     var body: some View {
         VStack(spacing: 0) {
             // Displays the timer in HH:MM:SS format
@@ -38,11 +40,13 @@ struct TimerView: View {
                 StopwatchUnitView(timeUnit: seconds)
             }
             .padding(.bottom, -4)
-            
+            .opacity(clockVisible ? 1 : 0)
+            .offset(y: clockVisible ? 0 : -10)
+
             Divider()
                 .padding(.vertical, 10)
+                .opacity(dividerVisible ? 1 : 0)
 
-            
             HStack {
                 // Pause / Play button
                 Button(action: {
@@ -105,11 +109,31 @@ struct TimerView: View {
                 })
             }
             .padding(.horizontal, 8)
+            .opacity(controlsVisible ? 1 : 0)
+            .offset(y: controlsVisible ? 0 : -10)
         }
         .padding(.vertical, 5)
-        
+
         // AVAudioPlayer must be initialised - but only on the first view of the window
         .onAppear {
+            clockVisible = false
+            dividerVisible = false
+            controlsVisible = false
+
+            withAnimation(.easeOut(duration: 0.28)) {
+                clockVisible = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.07) {
+                withAnimation(.easeOut(duration: 0.28)) {
+                    dividerVisible = true
+                }
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.14) {
+                withAnimation(.easeOut(duration: 0.28)) {
+                    controlsVisible = true
+                }
+            }
+
             if(!soundInitialised) {
                 let sound = NSDataAsset(name: "RainSound")?.data
                 audioPlayer = try! AVAudioPlayer(data: sound!)

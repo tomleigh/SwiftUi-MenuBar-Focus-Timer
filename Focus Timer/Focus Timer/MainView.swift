@@ -19,10 +19,11 @@ struct MainView: View {
     @AppStorage("colourTheme") var colourTheme : String = "Default"
     @AppStorage("soundscape") var soundscape : String = "Rain"
     @State var soundInitialised : Bool = false
-    
+    @State private var windowAppeared = false
+
     // Increase progressTime each second
     @State private var timer: Timer?
-    
+
     var body: some View {
         VStack (spacing: 0) {
             /// TitleBar is persistent across the TimerView and SettingsView
@@ -31,20 +32,30 @@ struct MainView: View {
                 .transaction { transaction in
                     transaction.animation = nil
                 }
-            
+
             if(settingsOpen) {
                 SettingsView(settingsOpen: $settingsOpen, audioPlayer: $audioPlayer, volume: $volume, colourTheme: $colourTheme, soundscape: $soundscape)
                     .transition(.moveAndFadeLeft)
                     .frame(width: 150)
-                
+
             } else {
                 TimerView(settingsOpen: $settingsOpen, audioPlayer: $audioPlayer,volume: $volume, progressTime: $progressTime, isRunning: $isRunning, isMuted: $isMuted, soundInitialised: $soundInitialised, timer: $timer)
                     .transition(.moveAndFadeRight)
                     .frame(width: 150)
-                
+
             }
         }
-        
+        .scaleEffect(windowAppeared ? 1.0 : 0.82, anchor: .top)
+        .opacity(windowAppeared ? 1.0 : 0.0)
+        .offset(y: windowAppeared ? 0 : -12)
+        .onAppear {
+            withAnimation(.spring(response: 0.38, dampingFraction: 0.72)) {
+                windowAppeared = true
+            }
+        }
+        .onDisappear {
+            windowAppeared = false
+        }
         .background(.thickMaterial)
         .background(setThemeColor())
     }
